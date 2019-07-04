@@ -12,7 +12,9 @@
     "build": "webpack",
     "test": "PWD=$(pwd) ava --verbose",
     "lint": "eslint ./ --cache --fix --ignore-pattern .gitignore",
-    "precommit-msg": "echo Pre-commit checking...please wait && exit 0"
+    "precommit-msg": "echo Pre-commit checking...please wait && exit 0",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "duxiaodu",
   "devDependencies": {
@@ -86,7 +88,8 @@
     "redux": "~3.5.2",
     "redux-actions": "~0.10.1",
     "redux-thunk": "~2.1.0",
-    "webpack": "~1.13.1"
+    "webpack": "~1.13.1",
+    "snyk": "^1.189.0"
   },
   "ava": {
     "files": [
@@ -119,5 +122,6 @@
       "helpMessage": ""
     },
     "ghooks": {}
-  }
+  },
+  "snyk": true
 }
